@@ -1,22 +1,26 @@
-const parallax_el = document.querySelectorAll('.parallax');
+const parallax_el = document.querySelectorAll(".parallax");
 
-let xValue = 0, yValue = 0;
+let xValue = 0,
+  yValue = 0;
 
-window.addEventListener('mousemove',(e)=>{
-    xValue = e.clientX - window.innerWidth/2;
-    yValue = e.clientY - window.innerHeight/2;
-    var pageX = e.clientX - window.innerWidth/2, pageY = e.clientY - window.innerHeight/2;
+window.addEventListener("mousemove", (e) => {
+  xValue = e.clientX - window.innerWidth / 2;
+  yValue = e.clientY - window.innerHeight / 2;
+  var pageX = e.clientX - window.innerWidth / 2,
+    pageY = e.clientY - window.innerHeight / 2;
 
+  parallax_el.forEach((element) => {
+    // el.style.transform = `translate(calc(-50%+${xValue}px),calc(-50%+${yValue}px)`;
 
-    parallax_el.forEach( element =>{
-        // el.style.transform = `translate(calc(-50%+${xValue}px),calc(-50%+${yValue}px)`;
-        
-        // element.style.transform =`translateX(calc(-50%+${xValue}px)) translateY(calc(-50%+${yValue}px))`;
-  	    element.style.transform = 'translateX(-' + (50 + pageX/200) + '%) translateY(-' + (50 + pageY/200) + '%)';
-        
-    });
+    // element.style.transform =`translateX(calc(-50%+${xValue}px)) translateY(calc(-50%+${yValue}px))`;
+    element.style.transform =
+      "translateX(-" +
+      (50 + pageX / 200) +
+      "%) translateY(-" +
+      (50 + pageY / 200) +
+      "%)";
+  });
 });
-
 
 // window.onload = function(){
 // 	var wrapper = document.querySelector('#wrapper'),
