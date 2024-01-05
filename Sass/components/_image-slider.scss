@@ -196,3 +196,12 @@
     right: 0;
     transform: translateX(100%);
   }
+
+ 
+
+  @media screen and (max-width: 600px) {
+
+  .caption, .slider-container {
+    display: none;
+  }
+  }
